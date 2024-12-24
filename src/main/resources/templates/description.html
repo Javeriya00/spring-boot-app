@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Project Description</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- For Bootstrap styling -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- For icons -->
+</head>
+<body>
+    <div class="container py-5">
+        <h1 th:text="${title}">Project Description</h1>
+        <p th:text="${msg}">
+            This page provides a detailed overview of the CI/CD pipeline implemented for the project.
+        </p>
+
+        <!-- Add CI/CD Pipeline Image -->
+        <div class="mt-4 text-center">
+            <img src="/images/CICD.png" alt="CI/CD Pipeline Workflow" class="img-fluid" />
+        </div>
+        
+        <!-- CI/CD Pipeline Description -->
+        <div class="mt-5 justified-text">
+            <!-- <h2>Description</h2> -->
+            <p>
+                The CI/CD process in the current application implementation includes a series of automated steps to streamline the development and deployment pipeline. It starts with the source code triggering Jenkins via a webhook, which initiates the build process. Jenkins then runs a Maven build, followed by SonarQube performing a thorough code analysis. Once the analysis is complete, tests are executed to verify the functionality of the code.
+            </p>
+            <p>
+                If the build and tests are successful, a new Docker image is pushed to DockerHub. The image updater then deploys the updated image to the Manifests Repository, and ArgoCD handles the deployment to the Kubernetes cluster. In the event of a failure, the pipeline generates detailed reports and sends notifications via Slack or email to inform the team of the issue.
+                This process highlights the automation of key stages, including building, testing, code analysis, containerization, and deployment, while ensuring proper error handling and communication at every stage.
+            </p>
+        </div>    
+
+    </div>
+
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; Javeriya Fathima | CI/CD Demo | Understanding the CI/CD Process</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
