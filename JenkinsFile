@@ -12,13 +12,13 @@ pipeline {
                 sh 'rm -rf *' 
             }
         }
-    //stage('Checkout') {
-      //steps {
-        //checkout scm
-        //sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/Javeriya00/spring-boot-app.git'
-      //}
-    //}
+    stage('Checkout') {
+        steps {
+          checkout scm
+          sh 'echo passed'
+          git branch: 'main', url: 'https://github.com/Javeriya00/spring-boot-app.git'
+        }
+      }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'             
