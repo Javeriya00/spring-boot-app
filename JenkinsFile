@@ -8,7 +8,7 @@ pipeline {
     docker {
            // image 'alpine/maven:latest'
               image 'maven:3.8.1-openjdk-11-slim'  // You can replace this with an Alpine-based image as needed
-              label 'docker'
+              //label 'docker'
               args '--user root -v /var/run/docker.sock:/var/run/docker.sock' 
           }
     }
