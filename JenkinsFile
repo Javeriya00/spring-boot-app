@@ -1,16 +1,10 @@
 pipeline {
   agent {
-   // docker {
+   docker {
       //image 'javeriyasdocker/spring-boot-app:version1'
-      //image 'abhishekf5/maven-abhishek-docker-agent:v1'
-     // args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
-    //}
-    docker {
-           // image 'alpine/maven:latest'
-              image 'maven:3.8.1-openjdk-11-slim'  // You can replace this with an Alpine-based image as needed
-              //label 'docker'
-              args '--user root -v /var/run/docker.sock:/var/run/docker.sock' 
-          }
+      image 'abhishekf5/maven-abhishek-docker-agent:v1'
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+    }
     }
   stages {
     stage('Clean Workspace') {
