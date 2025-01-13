@@ -29,7 +29,7 @@ pipeline {
 
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://54.165.23.131:9000/"
+        SONAR_URL = "http://18.232.161.244:9000/"
         //change it to the ip of the system you're running the sonarqube on
       }
       steps {
