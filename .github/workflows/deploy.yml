@@ -79,8 +79,12 @@ jobs:
       - name: Print Working Directory
         run: |
           pwd 
+      - name: Test CD Command
+         run: |
+          cd ./spring-boot-app-manifests
+          pwd 
       - name: Deploy to EKS
         run: |
-          kubectl apply -f k8s/deployment.yml
-          kubectl apply -f k8s/service.yml
+          kubectl apply -f deployment.yml
+          kubectl apply -f service.yml
       
