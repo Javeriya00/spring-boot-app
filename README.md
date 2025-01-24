@@ -1,4 +1,4 @@
-Here's an updated README with your project changes:
+Here’s an updated README reflecting the change for the Jenkins pipeline in your `spring-boot-app-manifests/deployment.yml`:
 
 ---
 
@@ -9,6 +9,7 @@ Here's an updated README with your project changes:
 ## 1️⃣ Jenkins Pipeline
 - Integrated a robust pipeline using Jenkins and successfully incorporated ArgoCD for continuous delivery. 
 - This approach utilized Docker and Minikube for local Kubernetes deployments, showcasing a smooth workflow for managing containerized applications.
+- **Note:** In the `spring-boot-app-manifests/deployment.yml`, the `image` tag is defined as `javeriyasdocker/my-ultimate-cicd:{{ github.run_id }}` for GitHub Actions. However, for the Jenkins pipeline, I used `replaceImageTag` instead of `{{ github.run_id }}` to dynamically tag the image.
 
 ## 2️⃣ GitHub Actions
 - Implemented the same project on Amazon Elastic Kubernetes Service (EKS) with a CI/CD pipeline powered by GitHub Actions. 
@@ -66,3 +67,5 @@ docker run -d -p 8010:8080 -t ultimate-cicd-pipeline:v1
 Hurray! Access the application on `http://<ip-address>:8010`
 
 ---
+
+Let me know if you'd like any further changes!
