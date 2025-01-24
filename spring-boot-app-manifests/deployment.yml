@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: javeriyasdocker/my-ultimate-cicd:3
+        image: javeriyasdocker/my-ultimate-cicd:${{ github.run_id }}
         ports:
         - containerPort: 8080
