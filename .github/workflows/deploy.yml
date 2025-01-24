@@ -20,7 +20,7 @@ jobs:
 
   maven_build:
     runs-on: ubuntu-latest
-    needs: checkout
+    needs: code_checkout
     steps:
       - name: Download code artifact
         uses: actions/download-artifact@v3
@@ -44,7 +44,7 @@ jobs:
 
   docker_build_and_push:
     runs-on: ubuntu-latest
-    needs: build
+    needs: maven_build
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v3
@@ -61,7 +61,7 @@ jobs:
 
   deploy_to_EKS:
     runs-on: ubuntu-latest
-    needs: docker
+    needs: docker_build_and_push
     steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
