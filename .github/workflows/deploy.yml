@@ -56,7 +56,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t javeriyasdocker/my-ultimate-cicd:${{ github.run_id }} ./docker
+          docker build -t javeriyasdocker/my-ultimate-cicd:${{ github.run_id }} .
           docker push javeriyasdocker/my-ultimate-cicd:${{ github.run_id }}
 
   deploy_to_EKS:
