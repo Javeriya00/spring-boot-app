@@ -1,0 +1,11 @@
+{
+  "name": "Spring Boot EKS Project",
+  "image": "mcr.microsoft.com/devcontainers/java:11",
+  "features": {
+    "docker-in-docker": "latest",
+    "aws-cli": "latest",
+    "kubectl-helm-minikube": "latest",
+    "ghcr.io/paul-gilber/devcontainer-features/eksctl-homebrew:1": {},
+    "ghcr.io/casl0/devcontainer-features/eksctl:1": {}
+  },
+  "postCreateCommand": "apt-get update && apt-get install -y maven && mvn --version && mvn clean install"
