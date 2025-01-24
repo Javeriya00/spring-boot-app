@@ -80,7 +80,7 @@ jobs:
         run: |
           pwd 
       - name: Test CD Command
-         run: |
+        run: |
           cd ./spring-boot-app-manifests
           pwd 
       - name: Deploy to EKS
