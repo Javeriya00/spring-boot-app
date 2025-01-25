@@ -1,6 +1,3 @@
-Here’s an updated README reflecting the change for the Jenkins pipeline in your `spring-boot-app-manifests/deployment.yml`:
-
----
 
 # 🌟 Project Update: Continuous Integration and Deployment for a Spring Boot Application 🌟
 
