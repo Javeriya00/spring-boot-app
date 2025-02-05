@@ -1,19 +1,21 @@
 
 # 🌟 Project Update: Continuous Integration and Deployment for a Spring Boot Application 🌟
 
-🚀 I recently automated the CI/CD pipeline for my Spring Boot application using two different approaches:
+🚀 I recently automated the CI/CD pipeline for my Spring Boot application using three different approaches:
 
 ## 1️⃣ Jenkins Pipeline
 - Integrated a robust pipeline using Jenkins and successfully incorporated ArgoCD for continuous delivery. 
 - This approach utilized Docker and Minikube for local Kubernetes deployments, showcasing a smooth workflow for managing containerized applications.
 - **Note:** In the `spring-boot-app-manifests/deployment.yml`, the `image` tag is defined as `javeriyasdocker/my-ultimate-cicd:{{ github.run_id }}` for GitHub Actions. However, for the Jenkins pipeline, I used `replaceImageTag` instead of `{{ github.run_id }}` to dynamically tag the image.
 
-## 2️⃣ GitHub Actions
+## 2️⃣  GitHub Actions
 - Implemented the same project on Amazon Elastic Kubernetes Service (EKS) with a CI/CD pipeline powered by GitHub Actions. 
 - While I didn’t integrate ArgoCD here (still exploring that workflow), I successfully automated the build, containerization, and deployment processes to EKS.
   
 👉 **Bonus:** This was implemented entirely within GitHub Codespaces, demonstrating how cloud-hosted development environments can streamline workflows.
 
+## 3. GitLab CI/CD Pipeline
+- This can be found at https://gitlab.com/javeriyafathima111/spring-boot-app.git 
 ---
 
 # Spring Boot based Java web application
